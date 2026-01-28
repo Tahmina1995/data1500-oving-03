@@ -15,8 +15,7 @@ Skriv dine svar på refleksjonsspørsmålene fra hver oppgave her.
 
 **Ditt svar:**
 
-Jeg foretrekker Docker fordi jeg får samme oppsett uansett maskin. Databasen kjører isolert i en container, så jeg «søler» ikke til operativsystemet mitt, og jeg kan ha flere versjoner side om side. Det er også mye enklere å starte/stoppe og dele prosjektet med andre – en compose-fil og et par kommandoer er nok.
-
+Fordelene med å bruke Docker i stedet for å installere PostgreSQL direkte er at jeg får et likt og reproduserbart miljø på alle maskiner, databasen kjører isolert slik at jeg unngår konflikter og rot i operativsystemet, jeg kan ha flere versjoner side om side, og det er mye enklere å starte, stoppe, oppdatere og dele oppsettet med andre via en docker-compose.yml. I praksis sparer jeg tid på oppsett og feilsøking, og det blir lettere for både meg og medstudenter å få ting til å fungere likt.
 
 
 ### Spørsmål 2: Hva betyr "persistent volum" i docker-compose.yml? Hvorfor er det viktig?
