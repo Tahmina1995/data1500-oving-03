@@ -1,3 +1,7 @@
+
+Navn: Tahmina Nargis Noori
+Bruker navn: tanoo6678@oslomet.no
+
 # Besvarelse av refleksjonsspørsmål - DATA1500 Oppgavesett 1.3
 
 Skriv dine svar på refleksjonsspørsmålene fra hver oppgave her.
@@ -10,41 +14,36 @@ Skriv dine svar på refleksjonsspørsmålene fra hver oppgave her.
 
 **Ditt svar:**
 
-[Skriv ditt svar her]
+Jeg foretrekker Docker fordi jeg får samme oppsett uansett maskin. Databasen kjører isolert i en container, så jeg «søler» ikke til operativsystemet mitt, og jeg kan ha flere versjoner side om side. Det er også mye enklere å starte/stoppe og dele prosjektet med andre – en compose-fil og et par kommandoer er nok.
 
----
+
 
 ### Spørsmål 2: Hva betyr "persistent volum" i docker-compose.yml? Hvorfor er det viktig?
 
 **Ditt svar:**
 
-[Skriv ditt svar her]
+Et «persistent volum» betyr at dataene lagres utenfor selve containeren. Da overlever databasen min når jeg stopper eller sletter containeren. Dette er viktig for at jeg ikke mister data ved restart, og det gjør det enklere å ta backup og jobbe videre senere.
 
----
+
 
 ### Spørsmål 3: Hva skjer når du kjører `docker-compose down`? Mister du dataene?
 
 **Ditt svar:**
 
-[Skriv ditt svar her]
-
----
+Når jeg kjører docker-compose down, stopper og sletter jeg containerne og nettverket. Dataene blir likevel ikke borte så lenge jeg bruker et navngitt volum (slik som i oppgaven). Jeg mister data først hvis jeg også sletter volumene med -v.
 
 ### Spørsmål 4: Forklar hva som skjer når du kjører `docker-compose up -d` første gang vs. andre gang.
 
 **Ditt svar:**
 
-[Skriv ditt svar her]
-
----
+Første gang jeg kjører docker-compose up -d, lastes image ned, volum og nettverk lages, og PostgreSQL initialiseres. Da kjøres også init-skriptene og testdata legges inn. Andre gang starter containeren raskere og bruker de samme dataene i volumet; init-skriptene kjøres ikke på nytt.
 
 ### Spørsmål 5: Hvordan ville du delt docker-compose.yml-filen med en annen student? Hvilke sikkerhetshensyn må du ta?
 
 **Ditt svar:**
 
-[Skriv ditt svar her]
+Hvis jeg skulle delt docker-compose.yml med en annen student, ville jeg ikke lagt inn ekte passord der. Jeg ville brukt en .env-fil og delt en /.env.example med eksempelverdier, og sørget for at .env er i .gitignore. Jeg ville også bare eksponert nødvendige porter og unngått personlige filstier. Hvis passord har vært delt offentlig, bør de byttes.
 
----
 
 ## Oppgave 2: SQL-spørringer og databaseskjema
 
